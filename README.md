@@ -12,17 +12,18 @@ Your application must adhere to the following requirments
 - Respond to front panel controls (within 100 ms) without utilizing 100 % of CPU time
 - Close all opened references and handles where used
 - Templates, examples, or code developed outside the bounds of this assignment are not acceptable for use in the application
+- Git is a must, please make sure you commit your work throughout the process.
 
 ## Aplication setup
 A lasertrain is controlled by GPS and 2 safety systems cosisting of 16 boolean sensors.
 In the lps_interview project are 2 VI's. The mock server VI will generate mock data for you to process. 
 
-The data from the gps is send over TCP on port 8081.
+The data from the gps is send over TCP on port 8081 with roughly 1 message per second.
 
 The format of the message is: "*timestamp, lattitude, longitude*" and a carriage return marks the end of a message.
 
-The data from the safety systems is send over TCP on port 8082. 
-The values of these sensors are packed in a 32-bit unsigned int. The first 16 bits belong to safety system 1, the other 16 bits belong to safety system 2.
+The data from the safety systems is send over TCP on port 8082 with roughly 10 messages per second. 
+The values of these sensors are packed in a 32-bit unsigned int. The first 16 bits belong to safety system 1, the other 16 bits belong to safety system 2. End of message is marked by a carriage return.
 
 ## Functionality
 
@@ -36,4 +37,15 @@ If the speed is greater then the threshold arm the system.
 
 Display the boolean values of the safety system sensors 
 
-For a laser to function the first 14 bits of its corresponding safety system must be TRUE and bits 15 and 16 must be FALSE and the GPS must have armed the system. If these conditions are met set the laser to TRUE (laser1 and safety_system1, laser2 and safetysystem2)
+If the first 14 bits of its corresponding safety system are TRUE and bits 15 and 16 are FALSE and the system is armed by the GPS, set the laser to TRUE (laser1 and safety_system1, laser2 and safetysystem2). If one of these conditions is not met set the laser back to FALSE
+
+If the sending server has stopped or no new messages are received for 2 seconds set both lasers to FALSE and disarm the system and wait for the server to start sending new messages.
+
+## Deliver and Grading
+
+To complete your work, please add `TimBerrier` as a contributer to your github repo when you're done, send an email to let us know. We will send you an invite to present your app.
+
+Your work will be judged as follows:
+- 40% coding style
+- 40% functionality
+- 20% presentation
