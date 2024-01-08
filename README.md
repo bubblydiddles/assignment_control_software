@@ -1,8 +1,8 @@
 # Assignment Control Software
 
-As part our application process, we'd like to see what you can produce by giving you an assignment to develop an application which processes fake data.
+As part our application process, we'd like to see what you can produce by giving you an assignment to develop an application which processes sample data.
 
-## Requirments
+## Requirements
 Your application must adhere to the following requirments
 - Function as specified under Functionality
 - Be hierarchical in nature. All major functions should be performed in subVIs 
