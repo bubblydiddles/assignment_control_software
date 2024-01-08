@@ -18,6 +18,8 @@ Your application must adhere to the following requirments
 A lasertrain is controlled by GPS and 2 safety systems cosisting of 16 boolean sensors.
 In the lps_interview project are 2 VI's. The mock server VI will generate mock data for you to process. 
 
+Build your application in the template.vi 
+
 The data from the gps is send over TCP on port 8081 with roughly 1 message per second.
 
 The format of the message is: "*timestamp, lattitude, longitude*" and a carriage return marks the end of a message.
@@ -41,11 +43,5 @@ If the first 14 bits of its corresponding safety system are TRUE and bits 15 and
 
 If the sending server has stopped or no new messages are received for 2 seconds set both lasers to FALSE and disarm the system and wait for the server to start sending new messages.
 
-## Deliver and Grading
-
+## Delivery
 To complete your work, please add `TimBerrier` as a contributer to your github repo when you're done, send an email to let us know. We will send you an invite to present your app.
-
-Your work will be judged as follows:
-- 40% coding style
-- 40% functionality
-- 20% presentation
