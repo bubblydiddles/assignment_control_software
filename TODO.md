@@ -1,7 +1,9 @@
-Control Software Assignment TOD
+Control Software Assignment TODO
 
 ### Tasks
 - [ ] TCP Listener code to SubVI's
 - [ ] Implement Error Handling for TCP timeout
-- [ ] GPS Velocity Estimation
 - [ ] Safety Sensor truth table
+
+### Completed
+- [x] GPS Velocity Estimation
