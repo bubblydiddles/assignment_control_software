@@ -1,8 +1,7 @@
 Control Software Assignment TODO
 
 ### Tasks
-- [ ] Time the TCP loops
-- [ ] Synchronized Stop Button
+- [ ] GPS string is empty sometimes
  
 ### Completed
 - [x] GPS Velocity Estimation
@@ -10,3 +9,4 @@ Control Software Assignment TODO
 - [x] Implement Error Handling for TCP timeout
 - [X] Add a filter for speed
 - [x] Make Heirarchy Cleaner
+- [x] Synchronized Stop Button
